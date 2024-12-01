@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9FF6FF"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Название приложения -->
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hamming Code Encoder/Decoder"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="#000000" />
+
+        <!-- Ввод сообщения -->
+        <EditText
+            android:id="@+id/inputMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Введите сообщение"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/appTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="16dp" />
+
+        <!-- Кнопка для кодирования -->
+        <Button
+            android:id="@+id/btnEncode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Закодировать"
+            app:layout_constraintTop_toBottomOf="@id/inputMessage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/cardview_shadow_start_color"
+            android:layout_marginTop="16dp" />
+
+        <!-- Вывод результата кодирования -->
+        <TextView
+            android:id="@+id/encodedResult"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Закодированное сообщение появится здесь"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/btnEncode"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Позиция для ошибки -->
+        <EditText
+            android:id="@+id/errorPosition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Позиция ошибки"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@id/encodedResult"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <!-- Кнопка для добавления ошибки -->
+        <Button
+            android:id="@+id/btnAddError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Добавить ошибку"
+            app:layout_constraintTop_toBottomOf="@id/errorPosition"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/cardview_shadow_start_color"
+            android:layout_marginTop="16dp" />
+
+        <!-- Вывод результата с ошибкой -->
+        <TextView
+            android:id="@+id/errorResult"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Сообщение с ошибкой появится здесь"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/btnAddError"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Кнопка для декодирования -->
+        <Button
+            android:id="@+id/btnDecode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Декодировать"
+            app:layout_constraintTop_toBottomOf="@id/errorResult"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/cardview_shadow_start_color"
+            android:layout_marginTop="16dp" />
+
+        <!-- Вывод результата декодирования -->
+        <TextView
+            android:id="@+id/decodedResult"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Результат декодирования появится здесь"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/btnDecode"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
